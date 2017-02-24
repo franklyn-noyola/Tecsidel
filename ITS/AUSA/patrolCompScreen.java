@@ -24,6 +24,7 @@ public class patrolCompScreen extends ausaFieldsConfiguration{
 			driver.findElement(By.id("ctl00_ContentZone_ctrlPatrol_txt_vehid_box_data")).sendKeys(+ranNumbr(600000000,699999999)+"");
 			driver.findElement(By.id("ctl00_ContentZone_ctrlPatrol_txt_legajo_box_data")).sendKeys(+ranNumbr(10000,90000000)+"");						
 			driver.findElement(By.id("ctl00_ContentZone_ctrlPatrol_txt_phone_box_data")).sendKeys(ranYearNumbr(910000000,980000000)+"");
+			driver.findElement(By.id("ctl00_ContentZone_ctrlPatrol_txt_responsible_box_data")).clear();
 			driver.findElement(By.id("ctl00_ContentZone_ctrlPatrol_txt_responsible_box_data")).sendKeys(personsT[ranYearNumbr(0,personsT.length-1)]+"");
 			driver.findElement(By.id("ctl00_ContentZone_ctrlPatrol_txt_driver_box_data")).sendKeys(personsT[ranYearNumbr(0,personsT.length-1)]+"");
 			ocupantesSection();
