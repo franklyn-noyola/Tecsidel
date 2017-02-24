@@ -13,6 +13,7 @@ public class trafficCompScreen extends ausaFieldsConfiguration{
 		  driver.findElement(By.id(traffLabel)).click();
 		  Thread.sleep(1000);
 		  driver.switchTo().frame(0);
+		  takeScreenShot("traffic.jpg");
         Thread.sleep(1000);
 			driver.findElement(By.id("ctl00_ContentZone_ctrlTraffic_txt_Title_box_data")).clear();
 			driver.findElement(By.id("ctl00_ContentZone_ctrlTraffic_txt_Title_box_data")).sendKeys("Tiempo"+" - "+ranNumbr(1,99)+" QA" );

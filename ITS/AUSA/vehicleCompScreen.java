@@ -28,7 +28,7 @@ public class vehicleCompScreen extends ausaFieldsConfiguration{
 		  driver.findElement(By.id(vehLabel)).click();
 		  Thread.sleep(1000);
 		  driver.switchTo().frame(0);
-		  takeScreenShot("vehicleComp.jpeg");
+		  takeScreenShot("vehicleComp.jpg");
 		  Thread.sleep(1000);
 			driver.findElement(By.id("ctl00_ContentZone_ctrlVehicle_txt_Title_box_data")).clear();
 			driver.findElement(By.id("ctl00_ContentZone_ctrlVehicle_txt_Title_box_data")).sendKeys("Vehicle"+" - "+ranNumbr(1,99)+" QA" );

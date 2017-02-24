@@ -93,7 +93,7 @@ public class ausaFieldsConfiguration {
 	  
 	  public static void takeScreenShot(String fname) throws Exception {
 		    File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		    FileUtils.copyFile(scrFile, new File("C:\\Selenium", fname));
+		    FileUtils.copyFile(scrFile, new File("C:\\Selenium\\", fname));
 	  }
 	  public static void selectDropDownClick2(String by)
       {

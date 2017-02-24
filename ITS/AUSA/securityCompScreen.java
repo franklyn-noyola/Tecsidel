@@ -19,6 +19,7 @@ public class securityCompScreen extends ausaFieldsConfiguration{
 		  driver.findElement(By.id(securLabel)).click();
 		  Thread.sleep(1000);
 		  driver.switchTo().frame(0);
+		  takeScreenShot("security.jpg");
 		  Thread.sleep(1000);
 			driver.findElement(By.id("ctl00_ContentZone_ctrlSecurity_txt_Title_box_data")).clear();
 			driver.findElement(By.id("ctl00_ContentZone_ctrlSecurity_txt_Title_box_data")).sendKeys("Seguridad Vial"+" - "+ranNumbr(1,99)+" QA" );

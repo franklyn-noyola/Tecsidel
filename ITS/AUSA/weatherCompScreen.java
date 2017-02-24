@@ -13,6 +13,7 @@ public class weatherCompScreen extends ausaFieldsConfiguration{
 		  driver.findElement(By.id(weaLabel)).click();
 		  Thread.sleep(1000);
 		  driver.switchTo().frame(0);
+		  takeScreenShot("clima.jpg");
         Thread.sleep(1000);
 			driver.findElement(By.id("ctl00_ContentZone_ctrlWeather_txt_Title_box_data")).clear();
 			driver.findElement(By.id("ctl00_ContentZone_ctrlWeather_txt_Title_box_data")).sendKeys("Tiempo"+" - "+ranNumbr(1,99)+" QA" );

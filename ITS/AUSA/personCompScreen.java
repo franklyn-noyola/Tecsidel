@@ -13,6 +13,7 @@ public class personCompScreen extends ausaFieldsConfiguration{
 		  driver.findElement(By.id(perLabel)).click();
 		  Thread.sleep(1000);
 		  driver.switchTo().frame(0);
+		  takeScreenShot("personComp.jpg");
           Thread.sleep(1000);
 			driver.findElement(By.id("ctl00_ContentZone_ctrlPerson_txt_Title_box_data")).clear();
 			driver.findElement(By.id("ctl00_ContentZone_ctrlPerson_txt_Title_box_data")).sendKeys("Damnificado"+" - "+ranNumbr(1,99)+" QA" );
@@ -24,7 +25,7 @@ public class personCompScreen extends ausaFieldsConfiguration{
 			Thread.sleep(500);
 			driver.findElement(By.id("ctl00_ContentZone_ctrlPerson_txt_phone_box_data")).sendKeys(ranYearNumbr(910000000,980000000)+"");
 			driver.findElement(By.id("ctl00_ContentZone_ctrlPerson_txt_dni_box_data")).sendKeys(dniLetra(ranYearNumbr(10000000,40000000))+"");
-			new Select (driver.findElement(By.id("ctl00_ContentZone_ctrlVehicle_cmb_driver_gender_cmb_dropdown"))).selectByIndex(genderT[nameGender]);
+			new Select (driver.findElement(By.id("ctl00_ContentZone_ctrlPerson_cmb_gender_cmb_dropdown"))).selectByIndex(genderT[nameGender]);
 			selectDropDownClick("ctl00_ContentZone_ctrlPerson_cmb_status_cmb_dropdown");
 			driver.findElement(By.id("ctl00_ContentZone_ctrlPerson_txt_comment_box_data")).sendKeys("Component Created by QA Automation Script");
 			Thread.sleep(1000);

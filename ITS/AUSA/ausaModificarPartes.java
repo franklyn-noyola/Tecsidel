@@ -254,8 +254,8 @@ public class ausaModificarPartes extends ausaFieldsConfiguration{
 		for (int i = 1; i <= infoComp.size(); i++){
 			selComp = ranNumbr(1,infoComp.size());	
 		}		
-			//compT = driver.findElement(By.xpath("//div"+"["+selComp+"]/a/div/span[contains(@id,'ctl00_ContentZone_BtnAdd')]")).getAttribute("class");
-		 	compT = "IB_crane";
+			compT = driver.findElement(By.xpath("//div"+"["+selComp+"]/a/div/span[contains(@id,'ctl00_ContentZone_BtnAdd')]")).getAttribute("class");
+		 	//compT = "IB_crane";
 			switch (compT){
 				case "IB_comunication":			Thread.sleep(1000);
 												AUSA.communicationCompScreen.ibCommunication();
@@ -281,7 +281,7 @@ public class ausaModificarPartes extends ausaFieldsConfiguration{
 				case "IB_weather":				Thread.sleep(1000);
 												AUSA.weatherCompScreen.ibWeather();
 												break;
-				case "IB_traffic":				Thread.sleep(1000);
+				case "IB_trafic":				Thread.sleep(1000);
 												AUSA.trafficCompScreen.ibTraffic();
 												break;
 				case "IB_roadway":				Thread.sleep(1000);

@@ -19,6 +19,7 @@ public class craneCompScreen extends ausaFieldsConfiguration{
 		  driver.findElement(By.id(cranLabel)).click();
 		  Thread.sleep(1000);
 		  driver.switchTo().frame(0);
+		  takeScreenShot("grua.jpg");
 		  Thread.sleep(1000);
 			driver.findElement(By.id("ctl00_ContentZone_ctrlCrane_txt_Title_box_data")).clear();
 			driver.findElement(By.id("ctl00_ContentZone_ctrlCrane_txt_Title_box_data")).sendKeys("Grúa"+" - "+ranNumbr(1,99)+" QA" );

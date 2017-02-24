@@ -13,6 +13,7 @@ public class communicationCompScreen extends ausaFieldsConfiguration{
 		  driver.findElement(By.id(comLabel)).click();
 		  Thread.sleep(1000);
 		  driver.switchTo().frame(0);
+		  takeScreenShot("communication.jpg");
           Thread.sleep(1000);
 			driver.findElement(By.id("ctl00_ContentZone_ctrlComunication_txt_Title_box_data")).clear();
 			driver.findElement(By.id("ctl00_ContentZone_ctrlComunication_txt_Title_box_data")).sendKeys("Communication"+" - "+ranNumbr(1,99)+" QA" );

@@ -16,6 +16,7 @@ public class patrolCompScreen extends ausaFieldsConfiguration{
 		  driver.findElement(By.id(patroLabel)).click();
 		  Thread.sleep(1000);
 		  driver.switchTo().frame(0);
+		  takeScreenShot("patrol.jpg");
 		  Thread.sleep(1000);
 			driver.findElement(By.id("ctl00_ContentZone_ctrlPatrol_txt_Title_box_data")).clear();
 			driver.findElement(By.id("ctl00_ContentZone_ctrlPatrol_txt_Title_box_data")).sendKeys("Seguridad Vial"+" - "+ranNumbr(1,99)+" QA" );
