@@ -347,17 +347,18 @@ public class ausaVerPartes extends ausaFieldsConfiguration{
 	  								}
 	  								System.out.println(" ");
 	  						}
-	  						if (i > 1){
+	  							if (i > 1){
 	  							WebElement component = driver.findElement(By.xpath("//*[@id='ctl00_ContentZone_TblComponent']/tbody/tr"+"["+i+"]"));
 	  							List <WebElement> componenttd = component.findElements(By.tagName("td"));
-	  									for (int x = 1; x<=componenttd.size(); x++){
-		  									String td1 = driver.findElement(By.xpath("//*[@id='ctl00_ContentZone_TblComponent']/tbody/tr"+"["+i+"]"+"/td"+"["+x+"]")).getText();	  									
-		  									System.out.printf("%-30s", td1);
-		  									
+	  								for (int x = 1; x <= componenttd.size();x++){
+	  									String td1 = driver.findElement(By.xpath("//*[@id='ctl00_ContentZone_TblComponent']/tbody/tr"+"["+i+"]"+"/td"+"["+x+"]")).getText();	  									
+	  									System.out.printf("\n", td1);//"%-30s"
+	  									//System.out.println(" ");
+	  										}
 		  								}	
 	  						}
 	  					}
-	  				}
+	  				
        @After
   public void tearDown() throws Exception {
     driver.quit();
