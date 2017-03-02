@@ -148,7 +148,6 @@ public class ausaModificarPartes extends ausaFieldsConfiguration{
                nexTab.sendKeys(Keys.CONTROL + "\t");
                driver.switchTo().defaultContent();
                Thread.sleep(1000);         
-             /*  
                selectDropDownClick("ctl00_ContentZone_cmb_parent_cmb_dropdown");
                selectDropDownClick("ctl00_ContentZone_cmb_status_cmb_dropdown");
                Thread.sleep(400);
@@ -204,7 +203,7 @@ public class ausaModificarPartes extends ausaFieldsConfiguration{
             		}
             	}
             }	
-            Thread.sleep(500);*/
+            Thread.sleep(500);
             infoComponents();
                
                
@@ -255,7 +254,7 @@ public class ausaModificarPartes extends ausaFieldsConfiguration{
 			selComp = ranNumbr(1,infoComp.size());	
 		}		
 			compT = driver.findElement(By.xpath("//div"+"["+selComp+"]/a/div/span[contains(@id,'ctl00_ContentZone_BtnAdd')]")).getAttribute("class");
-		 	//compT = "IB_crane";
+
 			switch (compT){
 				case "IB_comunication":			Thread.sleep(1000);
 												AUSA.communicationCompScreen.ibCommunication();
