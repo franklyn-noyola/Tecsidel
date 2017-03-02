@@ -37,7 +37,8 @@ public class ausaModificarPartes extends ausaFieldsConfiguration{
  
  	@Test
  	public void ausaIssuesUpdate() throws Exception{
- 		  try{ 	 			  	
+ 		  try{ 	 		
+ 			  
 	  			Actions action = new Actions (driver);
 	  			driver.get(baseUrl);
 	  			if (driver.getPageSource().contains("No se puede acceder a este sitio web") || driver.getPageSource().contains("Service Unavailable"))
@@ -147,7 +148,8 @@ public class ausaModificarPartes extends ausaFieldsConfiguration{
 			WebElement nexTab = driver.findElement(By.tagName("body"));
                nexTab.sendKeys(Keys.CONTROL + "\t");
                driver.switchTo().defaultContent();
-               Thread.sleep(1000);         
+               Thread.sleep(1000);  
+               
                selectDropDownClick("ctl00_ContentZone_cmb_parent_cmb_dropdown");
                selectDropDownClick("ctl00_ContentZone_cmb_status_cmb_dropdown");
                Thread.sleep(400);
@@ -180,9 +182,8 @@ public class ausaModificarPartes extends ausaFieldsConfiguration{
             Thread.sleep(1000);
             notEmptyDropDown(ramalsT);
             driver.findElement(By.id(locationT)).clear();
-            driver.findElement(By.id(locationT)).sendKeys("Modified Argentina");
-            driver.findElement(By.id(observaT)).clear();
-            driver.findElement(By.id(observaT)).sendKeys("QA issue Modifyed by Automation Script");
+            driver.findElement(By.id(locationT)).sendKeys("Modified Argentina");            
+            driver.findElement(By.id(observaT)).sendKeys("     ___QA issue Modifyed by Automation Script");
             Thread.sleep(500);
             datosSection();
             Thread.sleep(1000);
@@ -206,7 +207,7 @@ public class ausaModificarPartes extends ausaFieldsConfiguration{
             Thread.sleep(500);
             infoComponents();
                
-               
+                  
 		}
 	
 	public static void datosSection() throws Exception{
@@ -215,16 +216,15 @@ public class ausaModificarPartes extends ausaFieldsConfiguration{
     	Thread.sleep(1000);
         if (tipoSel.equals("Incidente")|| tipoSel.equals("Accidente")){  
         	if (driver.findElements(By.id(typeAccidentes)).size()!=0){
-        		
         		driver.findElement(By.id(typeAccidentes)).click();
-        		Thread.sleep(500);        		
-        		ranClick("ctl00_ContentZone_mc_typeOfAccident_ctl","",19,23);
+        		ranSelection("ctl00_ContentZone_mc_typeOfAccident_ctl","ctl00_ContentZone_mc_typeOfAccident_ctl".length());
+                ranClick("ctl00_ContentZone_mc_typeOfAccident_ctl","0",ad,caMer);        		
         		Thread.sleep(400);
         	}	
         	if (driver.findElements(By.id(typeImpacto)).size()!=0){
-        		driver.findElement(By.id(typeImpacto)).click();
-        		Thread.sleep(500);        		
-        		ranClick("ctl00_ContentZone_mc_causal_ctl","",19,23);
+        		driver.findElement(By.id(typeImpacto)).click();        		
+        		ranSelection("ctl00_ContentZone_mc_causal_ctl","ctl00_ContentZone_mc_causal_ctl".length());
+                ranClick("ctl00_ContentZone_mc_causal_ctl","0",ad,caMer);        		
         		Thread.sleep(500);
         	}	
         	
@@ -239,22 +239,21 @@ public class ausaModificarPartes extends ausaFieldsConfiguration{
         driver.findElement(By.id("ctl00_ContentZone_txt_note_box_data")).sendKeys("This was modified by automation scrript for Test Purpose");
         Thread.sleep(500);
         driver.findElement(By.id(cameraSel)).click();
-        Thread.sleep(500);            
-        ranSelection("ctl00_ContentZone_mcCameras_ctl",31);
-        ranClick("ctl00_ContentZone_mcCameras_ctl","0",ad,caMer);
-        
-        Thread.sleep(1000);
+        Thread.sleep(1000);            
+        ranSelection("ctl00_ContentZone_mcCameras_ctl","ctl00_ContentZone_mcCameras_ctl".length());
+        ranClick("ctl00_ContentZone_mcCameras_ctl","0",ad,caMer);        
+        Thread.sleep(2000);
  		}
 	
 	
 	public static void infoComponents() throws Exception{
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		List<WebElement> infoComp = driver.findElements(By.xpath("//span[contains(@id,'ctl00_ContentZone_BtnAdd')]"));				
 		for (int i = 1; i <= infoComp.size(); i++){
 			selComp = ranNumbr(1,infoComp.size());	
 		}		
 			compT = driver.findElement(By.xpath("//div"+"["+selComp+"]/a/div/span[contains(@id,'ctl00_ContentZone_BtnAdd')]")).getAttribute("class");
-
+				//compT = "IB_weather";
 			switch (compT){
 				case "IB_comunication":			Thread.sleep(1000);
 												AUSA.communicationCompScreen.ibCommunication();
@@ -295,7 +294,7 @@ public class ausaModificarPartes extends ausaFieldsConfiguration{
 				default:						System.out.println(compT+" No está implementado");
 												break;
 			}
-			//System.out.println(compT + " " + selComp);
+		
 		
 	}
 	
