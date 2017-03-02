@@ -352,8 +352,8 @@ public class ausaVerPartes extends ausaFieldsConfiguration{
 	  							List <WebElement> componenttd = component.findElements(By.tagName("td"));
 	  								for (int x = 1; x <= componenttd.size();x++){
 	  									String td1 = driver.findElement(By.xpath("//*[@id='ctl00_ContentZone_TblComponent']/tbody/tr"+"["+i+"]"+"/td"+"["+x+"]")).getText();	  									
-	  									System.out.printf("\n", td1);//"%-30s"
-	  									//System.out.println(" ");
+	  									System.out.printf("%-30s", td1);
+	  									
 	  										}
 		  								}	
 	  						}
